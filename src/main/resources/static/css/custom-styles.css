@@ -1,0 +1,17 @@
+/* ======================================================== */
+
+.site-logo {
+    display: flex !important;
+     justify-content: center;
+    display-items: center !important;
+}
+
+body.with-side-menu.theme-side-litmus-blue .site-logo h2 {
+    color: white !important;
+    font-size: 30px !important;
+}
+
+
+.popover-content.note-children-container { /* <-- Selector CORREGIDO */
+    display: none !important; /* Oculta la barra flotante por defecto */
+}

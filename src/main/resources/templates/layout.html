@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title layout:title-pattern="$CONTENT_TITLE | HelpDesk">
+    Título
+  </title>
+
+  <link th:href="@{/img/favicon.144x144.png}" rel="apple-touch-icon" type="image/png" sizes="144x144">
+  <link th:href="@{/img/favicon.ico}" rel="shortcut icon">
+
+  <link rel="stylesheet" th:href="@{/css/separate/vendor/blockui.min.css}">
+  <link rel="stylesheet" th:href="@{/css/separate/vendor/fancybox.min.css}">
+  <link rel="stylesheet" th:href="@{/css/separate/pages/activity.min.css}">
+  <link rel="stylesheet" th:href="@{/css/lib/summernote/summernote.css}">
+  <link rel="stylesheet" th:href="@{/css/separate/pages/editor.min.css}">
+  <link rel="stylesheet" th:href="@{/css/lib/font-awesome/font-awesome.min.css}">
+  <link rel="stylesheet" th:href="@{/css/lib/bootstrap/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/lib/bootstrap-sweetalert/sweetalert.css}">
+  <link rel="stylesheet" th:href="@{/css/separate/vendor/sweet-alert-animations.min.css}">
+  <link rel="stylesheet" th:href="@{/css/lib/datatables-net/datatables.min.css}">
+  <link rel="stylesheet" th:href="@{/css/separate/vendor/datatables-net.min.css}">
+  <link rel="stylesheet" th:href="@{/css/separate/vendor/select2.min.css}">
+  <link rel="stylesheet" th:href="@{/css/main.css}">
+  <link rel="stylesheet" th:href="@{/css/custom-styles.css}">
+
+  <th:block layout:fragment="css"></th:block>
+</head>
+<body class="with-side-menu theme-side-litmus-blue"> <div th:replace="~{fragments/header :: header-principal}"></div>
+
+<div th:replace="~{fragments/navbar :: navbar-principal}"></div>
+
+<div class="page-content">
+  <div class="container-fluid">
+    <th:block layout:fragment="content"></th:block>
+  </div>
+</div>
+
+<script th:src="@{/js/lib/jquery/jquery.min.js}"></script>
+<script th:src="@{/js/lib/tether/tether.min.js}"></script>
+<script th:src="@{/js/lib/bootstrap/bootstrap.min.js}"></script>
+<script th:src="@{/js/plugins.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+
+<script th:src="@{/js/lib/datatables-net/datatables.min.js}"></script>
+<script th:src="@{/js/lib/summernote/summernote.min.js}"></script>
+<script th:src="@{/js/lib/fancybox/jquery.fancybox.pack.js}"></script>
+<script th:src="@{/js/summernote-ES.js}"></script>
+<script th:src="@{/js/lib/select2/select2.full.min.js}"></script>
+<script th:src="@{/js/lib/bootstrap-notify/bootstrap-notify.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/lib/blockUI/jquery.blockUI.js}"></script>
+<script th:src="@{/js/lib/bootstrap-sweetalert/sweetalert.min.js}"></script>
+
+<th:block layout:fragment="js"></th:block>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <title>Home</title>
+
+  <th:block layout:fragment="css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" th:href="@{/css/lib/fullcalendar/fullcalendar.min.css}">
+    <link rel="stylesheet" th:href="@{/css/separate/pages/calendar.min.css}">
+  </th:block>
+</head>
+<body>
+
+<main layout:fragment="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="row">
+          <div class="col-sm-4">
+            <article class="statistic-box green">
+              <div>
+                <div class="number" id="lbltotal"></div>
+                <div class="caption"><div>Total de Tickets</div></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-4">
+            <article class="statistic-box yellow">
+              <div>
+                <div class="number" id="lbltotalabierto"></div>
+                <div class="caption"><div>Total de Tickets Abiertos</div></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-4">
+            <article class="statistic-box red">
+              <div>
+                <div class="number" id="lbltotalcerrado"></div>
+                <div class="caption"><div>Total de Tickets Cerrados</div></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="card">
+      <header class="card-header">
+        Grafico Estadístico - Tickets por Categoria
+      </header>
+      <div class="card-block">
+        <div id="divgraficocategoria" style="height: 250px;"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <header class="card-header">
+        Grafico Estadístico - Tickets por Area
+      </header>
+      <div class="card-block">
+        <div id="divgraficoarea" style="height: 250px;"></div>
+      </div>
+    </section>
+
+
+    <!--
+    <section class="card">
+      <header class="card-header">
+        Calendario
+      </header>
+      <div class="card-block">
+        <div id="idcalendar"></div>
+      </div>
+    </section>
+    -->
+  </div>
+</main>
+<th:block layout:fragment="js">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+
+  <script type="text/javascript" th:src="@{/js/lib/moment/moment-with-locales.min.js}"></script>
+  <!-- <script th:src="@{/js/lib/fullcalendar/fullcalendar.min.js}"></script> -->
+
+  <script type="text/javascript" th:src="@{/js/home.js}"></script>
+</th:block>
+
+</body>
+</html>

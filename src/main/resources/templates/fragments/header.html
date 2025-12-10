@@ -1,0 +1,61 @@
+<header class="site-header" th:fragment="header-principal" xmlns:th="http://www.w3.org/1999/xhtml">
+  <div class="container-fluid">
+
+    <a class="site-logo">
+      <h2>HelpDesk</h2>
+      <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
+        <span>toggle menu</span>
+      </button>
+
+      <button class="hamburger hamburger--htla">
+        <span>toggle menu</span>
+      </button>
+    </a>
+
+    <div class="site-header-content">
+      <div class="site-header-content-in">
+        <div class="site-header-shown">
+          <div class="dropdown dropdown-notification notif">
+            <a th:href="@{/notificaciones}" class="header-alarm">
+              <!-- <i class="font-icon-alarm"></i> -->
+            </a>
+          </div>
+          <div class="dropdown user-menu">
+            <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <!-- <img th:src="@{'/' + ${#authentication.principal.rolId} + '.jpg'}" alt="Avatar"> -->
+              <img th:src="@{/img/photo-92-1.jpg}" alt="Avatar">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
+              <!-- <a class="dropdown-item" th:href="@{/perfil}"><span class="font-icon glyphicon glyphicon-user"></span>Perfil</a> -->
+              <!-- <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-question-sign"></span>Ayuda</a> -->
+              <div class="dropdown-divider"></div>
+
+              <form th:action="@{/logout}" method="post" id="logoutForm">
+                <button type="submit" class="dropdown-item" style="cursor: pointer; border: none; background: none; width: 100%; text-align: left;">
+                  <span class="font-icon glyphicon glyphicon-log-out"></span>Cerrar Sesion
+                </button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-menu-right-overlay"></div>
+
+        <input type="hidden" id="user_idx" th:value="${#authentication.principal.id}">
+        <input type="hidden" id="rol_idx" th:value="${#authentication.principal.rolId}">
+
+        <div class="dropdown dropdown-typical">
+          <a href="#" class="dropdown-toggle no-arr">
+            <span class="font-icon font-icon-user"></span>
+
+            <span class="lblcontactonomx" th:text="${#authentication.principal.nombre} + ' ' + ${#authentication.principal.apellido}">
+            Nombre Apellido
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>

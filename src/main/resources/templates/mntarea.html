@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ES"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Mantenimiento Area</title>
+</head>
+<body>
+
+<main layout:fragment="content">
+    <header class="section-header">
+        <div class="tbl">
+            <div class="tbl-row">
+                <div class="tbl-cell">
+                    <h3>Mantenimiento Area</h3>
+                    <ol class="breadcrumb breadcrumb-simple">
+                        <li><a th:href="@{/home}">Inicio</a></li>
+                        <li class="active">Mantenimiento Area</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="box-typical box-typical-padding">
+        <button type="button" id="btnnuevo" class="btn btn-inline btn-primary">Nuevo Registro</button>
+
+        <table id="area_data" class="table table-bordered table-striped table-vcenter js-dataTable-full"
+               style="width:100%">
+            <thead>
+            <tr>
+                <th style="width: 90%;">Nombre</th>
+                <th class="text-center" style="width: 10%;">Editar</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div th:replace="~{fragments/modalarea :: modal-area}"></div>
+
+</main>
+
+<th:block layout:fragment="js">
+    <script type="text/javascript" th:src="@{/js/mntarea.js}"></script>
+</th:block>
+</body>
+</html>

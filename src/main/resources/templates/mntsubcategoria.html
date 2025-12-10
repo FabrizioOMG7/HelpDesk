@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ES"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Mantenimiento SubCategoría</title>
+</head>
+<body>
+
+<main layout:fragment="content">
+    <header class="section-header">
+        <div class="tbl">
+            <div class="tbl-row">
+                <div class="tbl-cell">
+                    <h3>Mantenimiento SubCategoría</h3>
+                    <ol class="breadcrumb breadcrumb-simple">
+                        <li><a th:href="@{/home}">Inicio</a></li>
+                        <li class="active">Mantenimiento SubCategoría</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="box-typical box-typical-padding">
+        <button type="button" id="btnnuevo" class="btn btn-inline btn-primary">Nuevo Registro</button>
+        <table id="subcategoria_data" class="table table-bordered table-striped table-vcenter js-dataTable-full"
+               style="width:100%">
+            <thead>
+            <tr>
+                <th style="width: 10%;">Categoría</th>
+                <th style="width: 10%;">SubCategoría</th>
+                <th class="d-none d-sm-table-cell" style="width: 5%;">Estado</th>
+                <th class="text-center" style="width: 5%;">Editar</th>
+                <th class="text-center" style="width: 5%;">Eliminar</th>
+                <th class="text-center" style="width: 5%;">Activar</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div th:replace="~{fragments/modalsubcategoria :: modal-subcategoria}"></div>
+</main>
+
+<th:block layout:fragment="js">
+    <script type="text/javascript" th:src="@{/js/mntsubcategoria.js}"></script>
+</th:block>
+
+</body>
+</html>

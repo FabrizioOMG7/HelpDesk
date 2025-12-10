@@ -1,0 +1,65 @@
+<nav class="side-menu" th:fragment="navbar-principal" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+     xmlns:th="">
+    <ul class="side-menu-list">
+
+        <li class="blue-dirty">
+            <a th:href="@{/home}">
+                <span class="glyphicon glyphicon-th"></span>
+                <span class="lbl">Inicio</span>
+            </a>
+        </li>
+        <li class="blue-dirty">
+            <a th:href="@{/nuevo-ticket}">
+                <span class="glyphicon glyphicon-th"></span>
+                <span class="lbl">Nuevo Ticket</span>
+            </a>
+        </li>
+
+        <div sec:authorize="hasRole('ADMIN')">
+            <li class="blue-dirty">
+                <a th:href="@{/mantenimiento/usuario}">
+                    <span class="glyphicon glyphicon-th"></span>
+                    <span class="lbl">Mant. Usuario</span>
+                </a>
+            </li>
+            <li class="blue-dirty">
+                <a th:href="@{/mantenimiento/prioridad}">
+                    <span class="glyphicon glyphicon-th"></span>
+                    <span class="lbl">Mant. Prioridad</span>
+                </a>
+            </li>
+            <li class="blue-dirty">
+                <a th:href="@{/mantenimiento/categoria}">
+                    <span class="glyphicon glyphicon-th"></span>
+                    <span class="lbl">Mant. Categoria</span>
+                </a>
+            </li>
+            <li class="blue-dirty">
+                <a th:href="@{/mantenimiento/subcategoria}">
+                    <span class="glyphicon glyphicon-th"></span>
+                    <span class="lbl">Mant. Sub Categoria</span>
+                </a>
+            </li>
+            <li class="blue-dirty">
+                <a th:href="@{/mantenimiento/area}">
+                    <span class="glyphicon glyphicon-th"></span>
+                    <span class="lbl">Mant. Area</span>
+                </a>
+            </li>
+            <li class="blue-dirty">
+                <a th:href="@{/home}">
+                    <span class="glyphicon glyphicon-th"></span>
+                    <span class="lbl">Diccionario Soluciones</span>
+                </a>
+            </li>
+        </div>
+
+        <li class="blue-dirty">
+            <a th:href="@{/consultartickect}">
+                <span class="glyphicon glyphicon-th"></span>
+                <span class="lbl">Consultar Ticket</span>
+            </a>
+        </li>
+
+    </ul>
+</nav>

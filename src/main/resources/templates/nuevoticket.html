@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <title>Nuevo Ticket</title>
+</head>
+<body>
+
+<main layout:fragment="content">
+  <header class="section-header">
+    <div class="tbl">
+      <div class="tbl-row">
+        <div class="tbl-cell">
+          <h3>Nuevo Ticket</h3>
+          <ol class="breadcrumb breadcrumb-simple">
+            <li><a th:href="@{/home}">Inicio</a></li> <li class="active">Nuevo Ticket</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="box-typical box-typical-padding">
+    <h5 class="m-t-lg with-border">Ingresar Información</h5>
+
+    <div class="row">
+      <form id="ticket_form">
+
+        <input type="hidden" id="usu_id" name="usu_id" th:value="${#authentication.principal.id}">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+        <div class="col-lg-12">
+          <fieldset class="form-group">
+            <label class="form-label semibold" for="tick_titulo">Titulo</label>
+            <input type="text" class="form-control" id="tick_titulo" name="tick_titulo" placeholder="Ingrese Titulo" required autofocus>
+          </fieldset>
+        </div>
+
+        <div class="col-lg-6">
+          <fieldset class="form-group">
+            <label class="form-label semibold" for="cat_id">Categoria</label>
+            <select id="cat_id" name="cat_id" class="form-control select2" required>
+              <option value="">Seleccionar</option>
+            </select>
+          </fieldset>
+        </div>
+
+        <div class="col-lg-6">
+          <fieldset class="form-group">
+            <label class="form-label semibold" for="cats_id">SubCategoria</label>
+            <select id="cats_id" name="cats_id" class="form-control select2" required>
+              <option value="">Seleccionar</option>
+            </select>
+          </fieldset>
+        </div>
+
+        <div class="col-lg-6">
+          <fieldset class="form-group">
+            <label class="form-label semibold" for="prio_id">Prioridad</label>
+            <select id="prio_id" name="prio_id" class="form-control select2" required>
+              <option value="">Seleccionar</option>
+            </select>
+          </fieldset>
+        </div>
+
+        <div class="col-lg-6">
+          <fieldset class="form-group">
+            <label class="form-label semibold" for="fileElem">Evidencias</label>
+            <input type="file" name="files[]" id="fileElem" class="form-control" multiple required>
+          </fieldset>
+        </div>
+
+        <div class="col-lg-12">
+          <fieldset class="form-group">
+            <label class="form-label semibold" for="tick_descrip">Descripción</label>
+            <div class="summernote-theme-1">
+              <textarea id="tick_descrip" name="tick_descrip" class="summernote" required></textarea>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="col-lg-12">
+          <button type="submit" id="btnguardar" name="action" value="add" class="btn btn-rounded btn-inline btn-primary">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</main>
+<th:block layout:fragment="js">
+  <script type="text/javascript" th:src="@{/js/nuevoticket.js}"></script>
+</th:block>
+
+</body>
+</html>
